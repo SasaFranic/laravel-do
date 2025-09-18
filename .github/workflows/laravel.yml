@@ -1,0 +1,24 @@
+name: Laravel CI
+
+# okidač - ova akcija će se pokrenuti na svaki 'push' na 'main' granu i na svaki 'pull request' koji cilja 'main' granu
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+# dozvole za GITHUB_TOKEN za deployment (ako će trebati kasnije)
+permissions:
+  contents: read
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Hello World!
+        run: echo "Hello World!"
+  echo2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo 2
+        run: echo "Hello x2!"
